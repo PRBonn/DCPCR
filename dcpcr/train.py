@@ -33,12 +33,7 @@ import dcpcr.models.models as models
               type=str,
               help='path to checkpoint file (.ckpt) to resume training.',
               default=None)
-@click.option('--auto_batch_size',
-              '-abs',
-              type=bool,
-              help='Boolean if enable auto batch_sizing',
-              default=True)
-def main(config, weights, checkpoint, data_config, auto_batch_size):
+def main(config, weights, checkpoint, data_config):
     cfg = yaml.safe_load(open(config))
     data_cfg = yaml.safe_load(open(data_config))
     cfg['data_loader'] = data_cfg
