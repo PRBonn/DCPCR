@@ -1,0 +1,21 @@
+experiment:
+    id: tmp
+
+##Training
+train:
+    n_gpus: 1
+    max_epoch: 1000
+    lr: 0.00005
+
+loss:
+    w_rot: 1.0
+    w_trans: 10.0
+    w_point: 0.0
+    scale: 40
+
+model:
+    tau: 1 #Temperature parameter for softmax
+    weighting: 'topk' # max, topk, information_gain
+    nr_attn_blocks: 1
+    kp_radius: 0.05
+    nr_kp_blocks: 7

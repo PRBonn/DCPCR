@@ -1,0 +1,50 @@
+batch_size: 5
+num_worker: 6
+train:
+  class: "Map2Map"
+  map_dirs:
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/1/submaps'
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/2/submaps'
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/3/submaps'
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/4/submaps'
+  src_dirs: '/data/apollo-compressed/TrainData/ColumbiaPark/2018-10-03/submaps'
+  max_pose_dist: 10
+  validation: False
+  mask_validation: True
+  pad: True
+  use_cache: True
+  file_format: '.npy'
+  num_points_pad: 2000
+  scale: 40
+val:
+  class: "Map2Map"
+  map_dirs:
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/1/submaps'
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/2/submaps'
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/3/submaps'
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/4/submaps'
+  src_dirs: '/data/apollo-compressed/TrainData/ColumbiaPark/2018-10-03/submaps'
+  max_pose_dist: 10
+  validation: True
+  mask_validation: True
+  pad: True
+  use_cache: True
+  file_format: '.npy'
+  num_points_pad: 2000
+  scale: 40
+test:
+  class: "Map2Map"
+  map_dirs:
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/1/submaps'
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/2/submaps'
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/3/submaps'
+    - '/data/apollo-compressed/MapData/ColumbiaPark/2018-09-21/4/submaps'
+  src_dirs: '/data/apollo-compressed/TrainData/ColumbiaPark/2018-10-03/submaps'
+  max_pose_dist: 10
+  validation: True
+  mask_validation: True
+  pad: True
+  use_cache: True
+  file_format: '.npy'
+  num_points_pad: 2000
+  scale: 40
